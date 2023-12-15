@@ -1,0 +1,24 @@
+<!-- src/app/convert-devise/convert-devise.component.html -->
+
+<div class="container mt-5">
+    <h2>Convertir un Montant</h2>
+  
+    <div class="form-group">
+      <label for="montant">Montant:</label>
+      <input type="number" class="form-control" id="montant" [(ngModel)]="montant" name="montant" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="deviseCible">Devise Cible:</label>
+      <select class="form-control" id="deviseCible" [(ngModel)]="deviseCible" name="deviseCible" required>
+        <option *ngFor="let devise of devises" [value]="devise.code">{{ devise.code }}</option>
+      </select>
+    </div>
+  
+    <button type="button" class="btn btn-primary" (click)="convertirMontant()">Convertir</button>
+  
+    <div *ngIf="montantConverti !== undefined">
+      <p>Montant converti: {{ montantConverti }}</p>
+    </div>
+  </div>
+  

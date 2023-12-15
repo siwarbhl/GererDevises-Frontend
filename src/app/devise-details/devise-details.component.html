@@ -1,0 +1,19 @@
+<!-- src/app/devise-details/devise-details.component.html -->
+
+<div class="container mt-5">
+    <h2>Détails de la Devise</h2>
+    <div *ngIf="devise">
+        <p>ID: {{ devise.id }}</p>
+        <p>Code: {{ devise.code }}</p>
+        <p>Symbole: {{ devise.symbole }}</p>
+        <p>Taux: {{ devise.taux }}</p>
+        <p>Montant: {{ devise.montant }}</p>
+        <div>
+            <button (click)="goToList()">Retour à la liste</button>
+
+        </div>
+    </div>
+    <div *ngIf="!devise">
+        <p>Aucun détail disponible pour cette devise.</p>
+    </div>
+</div>

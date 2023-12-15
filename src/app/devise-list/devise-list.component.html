@@ -1,0 +1,45 @@
+<!-- src/app/devise-list/devise-list.component.html -->
+
+<div class="container mt-5">
+  <div class="text-center">
+    <h2>Liste des Devises</h2>
+  </div>
+  <div class="d-flex justify-content-start mb-3">
+    <button class="btn btn-primary" (click)="addDevise()">Ajouter Devise</button>
+  </div>
+
+  <div class="d-flex justify-content-center mt-3">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Code</th>
+          <th scope="col">Symbole</th>
+          <th scope="col">Taux</th>
+          <th scope="col">Montant</th>
+          <th scope="col" class="text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let devise of devises">
+          <td>{{ devise.id }}</td>
+          <td>{{ devise.code }}</td>
+          <td>{{ devise.symbole }}</td>
+          <td>{{ devise.taux }}</td>
+          <td>{{ devise.montant }}</td>
+          <td class="text-right">
+            <button class="btn btn-info btn-sm mx-1" (click)="DeviseDetailsComponent(devise.id)">
+              <i class="fas fa-info-circle"></i>
+            </button>
+            <button class="btn btn-warning btn-sm mx-1" [routerLink]="['/edit', devise.id]">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-danger btn-sm mx-1" (click)="deleteDevise(devise.id)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

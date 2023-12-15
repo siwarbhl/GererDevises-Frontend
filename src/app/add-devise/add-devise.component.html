@@ -1,0 +1,26 @@
+<!-- src/app/add-devise/add-devise.component.html -->
+
+<div class="container mt-5">
+    <h2>Ajouter une Devise</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="code">Code:</label>
+        <input type="text" class="form-control" id="code" [(ngModel)]="devise.code" name="code" required>
+      </div>
+      <div class="form-group">
+        <label for="symbole">Symbole:</label>
+        <input type="text" class="form-control" id="symbole" [(ngModel)]="devise.symbole" name="symbole" required>
+      </div>
+      <div class="form-group">
+        <label for="taux">Taux:</label>
+        <input type="number" class="form-control" id="taux" [(ngModel)]="devise.taux" name="taux" required>
+      </div>
+      <div class="form-group">
+        <label for="montant">Montant:</label>
+        <input type="number" class="form-control" id="montant" [(ngModel)]="devise.montant" name="montant" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+  </div>
+  
